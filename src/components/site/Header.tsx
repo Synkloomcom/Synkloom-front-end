@@ -103,9 +103,9 @@ export function Header() {
                 );
               })}
               <div className="w-full h-[1px] bg-[var(--foreground)]/10 my-4" />
-              <button className="w-full py-4 rounded-full bg-[var(--foreground)] text-[var(--background)] text-xs font-black uppercase tracking-widest">
+              <Link to="/linesync-ai" onClick={() => setIsMenuOpen(false)} className="w-full py-4 rounded-full bg-[var(--foreground)] text-[var(--background)] text-xs font-black uppercase tracking-widest text-center block">
                 Get Started
-              </button>
+              </Link>
             </div>
           </div>
         )}

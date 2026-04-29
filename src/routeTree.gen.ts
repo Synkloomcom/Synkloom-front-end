@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ProductRouteImport } from './routes/product'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as LinesyncAiRouteImport } from './routes/linesync-ai'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TermsRoute = TermsRouteImport.update({
@@ -29,6 +30,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LinesyncAiRoute = LinesyncAiRouteImport.update({
+  id: '/linesync-ai',
+  path: '/linesync-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,12 +43,14 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/linesync-ai': typeof LinesyncAiRoute
   '/privacy': typeof PrivacyRoute
   '/product': typeof ProductRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/linesync-ai': typeof LinesyncAiRoute
   '/privacy': typeof PrivacyRoute
   '/product': typeof ProductRoute
   '/terms': typeof TermsRoute
@@ -50,20 +58,22 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/linesync-ai': typeof LinesyncAiRoute
   '/privacy': typeof PrivacyRoute
   '/product': typeof ProductRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacy' | '/product' | '/terms'
+  fullPaths: '/' | '/linesync-ai' | '/privacy' | '/product' | '/terms'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy' | '/product' | '/terms'
-  id: '__root__' | '/' | '/privacy' | '/product' | '/terms'
+  to: '/' | '/linesync-ai' | '/privacy' | '/product' | '/terms'
+  id: '__root__' | '/' | '/linesync-ai' | '/privacy' | '/product' | '/terms'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LinesyncAiRoute: typeof LinesyncAiRoute
   PrivacyRoute: typeof PrivacyRoute
   ProductRoute: typeof ProductRoute
   TermsRoute: typeof TermsRoute
@@ -92,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/linesync-ai': {
+      id: '/linesync-ai'
+      path: '/linesync-ai'
+      fullPath: '/linesync-ai'
+      preLoaderRoute: typeof LinesyncAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -104,6 +121,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LinesyncAiRoute: LinesyncAiRoute,
   PrivacyRoute: PrivacyRoute,
   ProductRoute: ProductRoute,
   TermsRoute: TermsRoute,

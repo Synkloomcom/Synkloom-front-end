@@ -161,7 +161,7 @@ export function Hero() {
                 transition={{ delay: 0.9 }}
                 className="flex flex-wrap items-center justify-center gap-4 lg:gap-6 mt-8 lg:mt-12"
               >
-                <Link to="/product" className="px-8 lg:px-12 py-4 lg:py-6 rounded-full bg-[var(--foreground)] text-[var(--background)] text-[10px] lg:text-xs font-display font-black uppercase tracking-[0.2em] hover:scale-105 transition-all shadow-2xl shadow-black/20 flex items-center justify-center shine">
+                <Link to="/linesync-ai" className="px-8 lg:px-12 py-4 lg:py-6 rounded-full bg-[var(--foreground)] text-[var(--background)] text-[10px] lg:text-xs font-display font-black uppercase tracking-[0.2em] hover:scale-105 transition-all shadow-2xl shadow-black/20 flex items-center justify-center shine">
                   Book Your Slot
                 </Link>
                 <button

@@ -35,16 +35,16 @@ export function Cta() {
           </p>
           <div className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row">
             <a
-              href="#pricing"
+              href="/linesync-ai"
               className="rounded-full bg-chrome-deep px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-black hover:shadow-[0_10px_40px_rgba(33,6,53,0.5)] hover:-translate-y-1"
             >
-              Deploy Synkloom
+              Deploy LineSync AI
             </a>
             <a
-              href="#how"
+              href="/linesync-ai"
               className="rounded-full border-[2px] border-white/60 bg-white/40 px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] text-chrome-deep backdrop-blur-xl transition-all hover:bg-white/90 hover:border-white hover:shadow-[0_10px_40px_rgba(255,255,255,0.7)] hover:-translate-y-1"
             >
-              Book a Demo
+              Learn More
             </a>
           </div>
         </div>
